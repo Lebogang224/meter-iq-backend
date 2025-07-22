@@ -232,9 +232,7 @@ def not_found(error):
 def internal_error(error):
     return jsonify({'error': 'Internal server error'}), 500
 
-@app.route('/')
-def serve_index():
-    return send_from_directory('.', 'index.html')
+
 
 @app.route('/api/login', methods=['POST'])
 def login():
@@ -836,3 +834,4 @@ def update_task(task_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
